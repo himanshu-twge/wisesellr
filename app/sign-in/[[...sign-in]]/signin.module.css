@@ -1,0 +1,101 @@
+.page {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+}
+
+.left {
+  background: var(--text-primary);
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  background: white;
+  color: var(--text-primary);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+.brandName {
+  font-family: 'DM Serif Display', serif;
+  font-size: 20px;
+  color: white;
+  letter-spacing: 0.3px;
+}
+
+.tagline h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 3rem;
+  font-weight: 400;
+  color: white;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+
+.tagline p {
+  font-size: 16px;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.6;
+}
+
+.tools {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.toolPill {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.8);
+  padding: 8px 16px;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  background: var(--off-white);
+}
+
+.clerkRoot { width: 100%; max-width: 400px; }
+.clerkCard {
+  background: white !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius-lg) !important;
+  box-shadow: var(--shadow-md) !important;
+  padding: 2rem !important;
+}
+.clerkTitle { font-family: 'DM Serif Display', serif !important; font-size: 1.5rem !important; }
+.clerkButton {
+  background: var(--text-primary) !important;
+  border-radius: var(--radius-sm) !important;
+  font-family: 'DM Sans', sans-serif !important;
+}
+.clerkButton:hover { background: #333 !important; }
+
+@media (max-width: 768px) {
+  .page { grid-template-columns: 1fr; }
+  .left { padding: 2rem; min-height: 280px; }
+  .tagline h1 { font-size: 2rem; }
+}
