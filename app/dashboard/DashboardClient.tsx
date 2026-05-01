@@ -45,7 +45,6 @@ export default function DashboardClient({ userName, userEmail, userInitials, all
           <UserButton afterSignOutUrl="/sign-in" />
         </div>
       </header>
-
       <main className={styles.main}>
         <div className={styles.greeting}>
           <div className={styles.avatar}>{userInitials}</div>
@@ -54,71 +53,69 @@ export default function DashboardClient({ userName, userEmail, userInitials, all
             <p className={styles.greetingSubtitle}>
               {visibleTools.length === 0
                 ? 'No tools assigned yet. Contact your admin.'
-                : `You have access to ${visibleTools.length} tool${visibleTools.length > 1 ? 's' : ''}.`}
+                : 'You have access to ' + visibleTools.length + ' tool' + (visibleTools.length > 1 ? 's' : '') + '.'}
             </p>
           </div>
         </div>
-
         {visibleTools.length > 0 && (
           <section className={styles.section}>
             <h2 className={styles.sectionTitle}>Your tools</h2>
             <div className={styles.grid}>
-              {visibleTools.map(tool => (
-                
-                  key={tool.id}
-                  href={tool.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.card}
-                >
-                  <div className={styles.cardTop}>
-                    <div className={styles.iconWrap} style={{ background: tool.color }}>
-                      <span className={styles.icon}>{tool.icon}</span>
+              {visibleTools.map(function(tool) {
+                return (
+                  
+                    key={tool.id}
+                    href={tool.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.card}
+                  >
+                    <div className={styles.cardTop}>
+                      <div className={styles.iconWrap} style={{ background: tool.color }}>
+                        <span className={styles.icon}>{tool.icon}</span>
+                      </div>
+                      <div className={styles.cardArrow}>↗</div>
                     </div>
-                    <div className={styles.cardArrow}>↗</div>
-                  </div>
-                  <h3 className={styles.cardTitle}>{tool.name}</h3>
-                  <p className={styles.cardDesc}>{tool.description}</p>
-                  <div className={styles.cardFooter}>
-                    <span className={styles.openBtn}>Open tool</span>
-                  </div>
-                </a>
-              ))}
+                    <h3 className={styles.cardTitle}>{tool.name}</h3>
+                    <p className={styles.cardDesc}>{tool.description}</p>
+                    <div className={styles.cardFooter}>
+                      <span className={styles.openBtn}>Open tool</span>
+                    </div>
+                  </a>
+                )
+              })}
             </div>
           </section>
         )}
-
         {lockedTools.length > 0 && visibleTools.length > 0 && (
           <section className={styles.section}>
             <h2 className={styles.sectionTitle}>Not available</h2>
             <div className={styles.grid}>
-              {lockedTools.map(tool => (
-                <div key={tool.id} className={`${styles.card} ${styles.cardLocked}`}>
-                  <div className={styles.cardTop}>
-                    <div className={styles.iconWrap} style={{ background: '#f4f3f0', opacity: 0.5 }}>
-                      <span className={styles.icon}>{tool.icon}</span>
+              {lockedTools.map(function(tool) {
+                return (
+                  <div key={tool.id} className={styles.card + ' ' + styles.cardLocked}>
+                    <div className={styles.cardTop}>
+                      <div className={styles.iconWrap} style={{ background: '#f4f3f0', opacity: 0.5 }}>
+                        <span className={styles.icon}>{tool.icon}</span>
+                      </div>
+                      <div className={styles.lockBadge}>No access</div>
                     </div>
-                    <div className={styles.lockBadge}>No access</div>
+                    <h3 className={styles.cardTitle}>{tool.name}</h3>
+                    <p className={styles.cardDesc}>Contact your admin to request access.</p>
                   </div>
-                  <h3 className={styles.cardTitle}>{tool.name}</h3>
-                  <p className={styles.cardDesc}>Contact your admin to request access to this tool.</p>
-                </div>
-              ))}
+                )
+              })}
             </div>
           </section>
         )}
-
         {isAdmin && (
           <section className={styles.adminBox}>
             <div className={styles.adminIcon}>🛡</div>
             <div>
               <div className={styles.adminTitle}>You are an admin</div>
               <div className={styles.adminDesc}>
-                To control which tools each user can see, go to{' '}
-                <strong>clerk.com → Dashboard → Users → select a user → Public Metadata</strong>
-                {' '}and set:
-                <code className={styles.code}>{'{"tools": ["po-analysis", "zoho-utility"]}'}</code>
-                Use <code className={styles.codeInline}>po-analysis</code> and/or <code className={styles.codeInline}>zoho-utility</code> to grant access.
+                Go to clerk.com → Users → select a user → Public Metadata and set:
+                <code className={styles.code}>{"tools: [po-analysis, zoho-utility]"}</code>
               </div>
             </div>
           </section>
