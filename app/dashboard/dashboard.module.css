@@ -1,0 +1,247 @@
+.page {
+  min-height: 100vh;
+  background: var(--off-white);
+}
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(248, 247, 244, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 2rem;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navBrand { display: flex; align-items: center; gap: 10px; }
+
+.navLogo {
+  width: 32px;
+  height: 32px;
+  background: var(--text-primary);
+  color: white;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.navName {
+  font-family: 'DM Serif Display', serif;
+  font-size: 18px;
+  color: var(--text-primary);
+}
+
+.navRight { display: flex; align-items: center; gap: 14px; }
+
+.navEmail {
+  font-size: 13px;
+  color: var(--text-muted);
+  display: none;
+}
+
+@media (min-width: 640px) { .navEmail { display: block; } }
+
+.main {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 3rem 2rem 4rem;
+}
+
+.greeting {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 3rem;
+}
+
+.avatar {
+  width: 52px;
+  height: 52px;
+  background: var(--text-primary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+.greetingTitle {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.75rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.greetingSubtitle {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.section { margin-bottom: 2.5rem; }
+
+.sectionTitle {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
+  cursor: pointer;
+}
+
+.card:hover {
+  border-color: var(--border-dark);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.cardLocked {
+  opacity: 0.5;
+  cursor: default;
+  pointer-events: none;
+}
+
+.cardTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.iconWrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon { font-size: 22px; }
+
+.cardArrow {
+  font-size: 18px;
+  color: var(--text-muted);
+  transition: color 0.15s, transform 0.15s;
+}
+
+.card:hover .cardArrow {
+  color: var(--text-primary);
+  transform: translate(2px, -2px);
+}
+
+.lockBadge {
+  font-size: 11px;
+  padding: 3px 10px;
+  background: var(--stone);
+  color: var(--text-muted);
+  border-radius: 100px;
+  border: 1px solid var(--border);
+}
+
+.cardTitle {
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.cardDesc {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  flex: 1;
+}
+
+.cardFooter { margin-top: 4px; }
+
+.openBtn {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 14px;
+  border-radius: 100px;
+  border: 1px solid var(--border-dark);
+  background: var(--off-white);
+  transition: background 0.15s;
+}
+
+.card:hover .openBtn {
+  background: var(--stone);
+}
+
+.adminBox {
+  margin-top: 1rem;
+  background: var(--amber-bg);
+  border: 1px solid #f0d49a;
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.adminIcon { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+
+.adminTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--amber);
+  margin-bottom: 6px;
+}
+
+.adminDesc {
+  font-size: 13px;
+  color: var(--amber);
+  line-height: 1.7;
+}
+
+.code {
+  display: block;
+  margin-top: 8px;
+  background: rgba(0,0,0,0.06);
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-family: monospace;
+  font-size: 12px;
+  color: var(--amber);
+  word-break: break-all;
+}
+
+.codeInline {
+  background: rgba(0,0,0,0.06);
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 12px;
+}
