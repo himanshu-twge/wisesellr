@@ -19,6 +19,14 @@ const ALL_TOOLS = [
     url: 'https://zoho-utility.bolt.host',
     color: '#fdf4e3',
   },
+  {
+    id: 'listing-scraper',
+    name: 'Listing Scraper',
+    description: 'Monitor Amazon India product listings across brands, pincodes and ASINs.',
+    icon: '🔍',
+    url: 'https://price-watcher-62.emergent.host',
+    color: '#eef2ff',
+},
 ]
 
 interface Props {
