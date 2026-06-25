@@ -20,6 +20,14 @@ const ALL_TOOLS = [
     color: '#fdf4e3',
   },
   {
+    id: 'twge-master-hub',
+    name: 'TWGE Master Hub',
+    description: 'Masters + Inventory + Price List Audit.',
+    icon: '🗄️',
+    url: 'https://masters-inv-manageme-pezr.bolt.host',
+    color: '#fdf2f8',
+  },
+  {
     id: 'listing-scraper',
     name: 'Listing Scraper',
     description: 'Monitor Amazon India product listings across brands, pincodes and ASINs.',
