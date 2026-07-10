@@ -28,6 +28,14 @@ const ALL_TOOLS = [
     color: '#fdf2f8',
   },
   {
+    id: 'sales-ads-hub',
+    name: 'Sales & Ad Hub',
+    description: 'All your Sales & Ads data in one place.',
+    icon: '📈',
+    url: 'https://sales-ads-hub-4afx.bolt.host',
+    color: '#fff7ed',
+  },
+  {
     id: 'listing-scraper',
     name: 'Listing Scraper',
     description: 'Monitor Amazon India product listings across brands, pincodes and ASINs.',
